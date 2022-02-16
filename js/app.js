@@ -5,6 +5,10 @@ let throwErr = errMsg.appendChild(pElem);
 
 
 document.getElementById("calc_btn").addEventListener("click", function () {
+   return inputValidation();
+});
+
+function inputValidation() {
    // All Input Values
    let incomeInput = document.getElementById("income-input");
    incomeInput = incomeInput.value;
@@ -34,19 +38,25 @@ document.getElementById("calc_btn").addEventListener("click", function () {
       throwErr.innerText = "Please insert your food value";
    } else if (isNaN(foodValue)) {
       throwErr.innerText = "Food value should be number";
+   } else if (foodValue < 0) {
+      throwErr.innerText = "Negative value are not alllowed";
    } else if (rentInput == "") {
       throwErr.innerText = "Please insert your rent value";
    } else if (isNaN(rentValue)) {
       throwErr.innerText = "Rent value should be number";
+   } else if (rentValue < 0) {
+      throwErr.innerText = "Negative value are not alllowed";
    } else if (clothesInput == "") {
       throwErr.innerText = "Please insert your clothes value";
    } else if (isNaN(clothesValue)) {
       throwErr.innerText = "Clothes value should be number";
+   } else if (clothesValue < 0) {
+      throwErr.innerText = "Negative value are not alllowed";
    } else {
+      throwErr.innerText = "";
       return calculateExpenses(incomeValue, foodValue, rentValue, clothesValue);
    }
-});
-
+}
 
 function calculateExpenses(incomeValue, foodValue, rentValue, clothesValue) {
    // Total expenses ammount
