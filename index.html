@@ -56,19 +56,22 @@
                            <div class="row mb-3">
                               <label for="food-input" class="col-sm-2 col-form-label">Food:</label>
                               <div class="col-sm-10">
-                                 <input type="text" class="form-control" id="food-input" name="food-input" placeholder="e.g: 500">
+                                 <input type="text" class="form-control" id="food-input" name="food-input"
+                                    placeholder="e.g: 500">
                               </div>
                            </div>
                            <div class="row mb-3">
                               <label for="rent-input" class="col-sm-2 col-form-label">Rent:</label>
                               <div class="col-sm-10">
-                                 <input type="text" class="form-control" id="rent-input" name="rent-input" placeholder="e.g: 500">
+                                 <input type="text" class="form-control" id="rent-input" name="rent-input"
+                                    placeholder="e.g: 500">
                               </div>
                            </div>
                            <div class="row mb-3">
                               <label for="clothes-input" class="col-sm-2 col-form-label">Clothes:</label>
                               <div class="col-sm-10">
-                                 <input type="text" class="form-control" id="clothes-input" name="clothes-input" placeholder="e.g: 500">
+                                 <input type="text" class="form-control" id="clothes-input" name="clothes-input"
+                                    placeholder="e.g: 500">
                               </div>
                            </div>
                         </div>
@@ -78,24 +81,28 @@
                         </div>
 
                         <!-- Error Message Showing Here  -->
-                        <div class="err_msg text-danger my-4"></div>
+                        <div class="err_msg my-4 text-warning"></div>
 
                         <div class="fw-bold text-center mt-5">Total Expenses : <span class="total_expense"></span></div>
                         <div class="fw-bold text-center mt-3">Balance : <span class="total_balance"></span></div>
                      </div>
 
-                     <div class="mff_saving_form mt-4">
+                     <!-- Saving amount  -->
+                     <div class="mff_saving_form my-5">
                         <div class="row mb-3">
                            <label for="saving-input" class="col-sm-2 col-form-label">Save:</label>
                            <div class="col-sm-3">
-                              <input type="number" class="form-control" id="saving-input" name="saving-input" placeholder="20%">
+                              <input type="text" class="form-control" id="saving-input" name="saving-input"
+                                 placeholder="e.g: 20">
                            </div>
                            <div class="col-sm-1 d-flex align-items-center justify-content-center">%</div>
                            <div class="col-sm-6">
                               <button id="saveBtn" class="btn btn-info">Save</button>
                            </div>
                         </div>
-                        <div class="text-warning final_amount"></div>
+                        <div class="saving_amount_err text-warning"></div>
+                        <div class="fw-bold">Saving Amount : <span class="final_amount"></span></div>
+                        <div class="fw-bold">Remaining Balance : <span id="remaining_balance"></span></div>
                      </div>
 
                   </div>
