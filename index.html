@@ -26,16 +26,16 @@
       <header class="mff_header pt-5">
          <h1 class="site-title text-center fs-3 fw-bold py-3"><span class="text-info">Money</span> For Future</h1>
       </header>
-      <section class="mff_section">
+      <section class="mff_section pt-5">
          <div class="container">
             <div class="row">
-               <div class="col-lg-6">
-                  <div class="mff_photos">
-                     <img src="photos/money.jpg" class="w-100" alt="Money-bg">
+               <div class="col-lg-6 col-sm-12">
+                  <div class="mff_photos d-flex align-items-center justify-content-center mb-5">
+                     <img src="photos/money.jpg" class="w-75" alt="Money-bg">
                   </div>
                </div>
-               <div class="col-lg-6">
-                  <div class="mff_details">
+               <div class="col-lg-6 col-sm-12">
+                  <div class="mff_details w-75 mx-auto">
 
                      <div class="mff_details_form">
 
@@ -45,7 +45,7 @@
                            <div class="row mb-3">
                               <label for="income-input" class="col-sm-2 col-form-label">Income</label>
                               <div class="col-sm-10">
-                                 <input type="text" class="form-control" id="income-input">
+                                 <input type="text" class="form-control" id="income-input" placeholder="e.g: 10,000">
                               </div>
                            </div>
                         </div>
@@ -56,19 +56,19 @@
                            <div class="row mb-3">
                               <label for="food-input" class="col-sm-2 col-form-label">Food:</label>
                               <div class="col-sm-10">
-                                 <input type="text" class="form-control" id="food-input" name="food-input">
+                                 <input type="text" class="form-control" id="food-input" name="food-input" placeholder="e.g: 500">
                               </div>
                            </div>
                            <div class="row mb-3">
                               <label for="rent-input" class="col-sm-2 col-form-label">Rent:</label>
                               <div class="col-sm-10">
-                                 <input type="text" class="form-control" id="rent-input" name="rent-input">
+                                 <input type="text" class="form-control" id="rent-input" name="rent-input" placeholder="e.g: 500">
                               </div>
                            </div>
                            <div class="row mb-3">
                               <label for="clothes-input" class="col-sm-2 col-form-label">Clothes:</label>
                               <div class="col-sm-10">
-                                 <input type="text" class="form-control" id="clothes-input" name="clothes-input">
+                                 <input type="text" class="form-control" id="clothes-input" name="clothes-input" placeholder="e.g: 500">
                               </div>
                            </div>
                         </div>
@@ -84,6 +84,19 @@
                         <div class="fw-bold text-center mt-3">Balance : <span class="total_balance"></span></div>
                      </div>
 
+                     <div class="mff_saving_form mt-4">
+                        <div class="row mb-3">
+                           <label for="saving-input" class="col-sm-2 col-form-label">Save:</label>
+                           <div class="col-sm-3">
+                              <input type="number" class="form-control" id="saving-input" name="saving-input" placeholder="20%">
+                           </div>
+                           <div class="col-sm-1 d-flex align-items-center justify-content-center">%</div>
+                           <div class="col-sm-6">
+                              <button id="saveBtn" class="btn btn-info">Save</button>
+                           </div>
+                        </div>
+                        <div class="text-warning final_amount"></div>
+                     </div>
 
                   </div>
                </div>

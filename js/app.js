@@ -8,29 +8,29 @@ document.getElementById("calc_btn").addEventListener("click", function () {
    return inputValidation();
 });
 
+function gettingInputValue(id) {
+   let inputIdVal = document.getElementById(id + "-input");
+   inputIdVal = incomeInput.value;
+   const inputVal = parseFloat(inputIdVal);
+   return inputVal;
+}
+
 function inputValidation() {
    // All Input Values
    let incomeInput = document.getElementById("income-input");
-   incomeInput = incomeInput.value;
-   const incomeValue = parseFloat(incomeInput);
-
    let foodInput = document.getElementById("food-input");
-   foodInput = foodInput.value;
-   const foodValue = parseFloat(foodInput);
-
    let rentInput = document.getElementById("rent-input");
-   rentInput = rentInput.value;
-   const rentValue = parseFloat(rentInput);
-
-
    let clothesInput = document.getElementById("clothes-input");
-   clothesInput = clothesInput.value;
-   const clothesValue = parseFloat(clothesInput);
+
+   const incomeValue = gettingInputValue("income")
+   const foodValue = gettingInputValue("food");
+   const rentValue = gettingInputValue("rent");
+   const clothesValue = gettingInputValue("clothes");
 
    // Conditions
    if (incomeInput == "") {
       throwErr.innerText = "Please insert your income value";
-   } else if (isNaN(incomeValue)) {
+   } else if (isNaN(incomeValue) && typeof incomeInput != 'number') {
       throwErr.innerText = "Income value should be numbers";
    } else if (incomeValue < 0) {
       throwErr.innerText = "Negative value are not alllowed";
@@ -54,7 +54,7 @@ function inputValidation() {
       throwErr.innerText = "Negative value are not alllowed";
    } else {
       throwErr.innerText = "";
-      return calculateExpenses(incomeValue, foodValue, rentValue, clothesValue);
+      calculateExpenses(incomeValue, foodValue, rentValue, clothesValue);
    }
 }
 
@@ -69,3 +69,17 @@ function calculateExpenses(incomeValue, foodValue, rentValue, clothesValue) {
       document.querySelector('.total_balance').innerText = incomeValue - totalExpense;
    }
 }
+
+
+document.getElementById('saveBtn').addEventListener('click', function () {
+   let saveInput = document.getElementById("saving-input");
+   saveInput = saveInput.value;
+   const saveInputValue = parseFloat(saveInput);
+
+   let totalBalance = document.querySelector('.total_balance').innerText;
+   const totalBalanceVal = parseFloat(totalBalance);
+
+   let xx = totalBalanceVal / saveInputValue;
+   document.querySelector('.final_amount').innerText = xx;
+
+});
